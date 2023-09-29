@@ -8,13 +8,13 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="radio" name="payment" value= "visa">
-        <label>visa</label><br>
-        <input type="radio" name="payment" value="master">
-        <label>master</label><br>
-        <input type="radio" name="payment" value= "paypal">
-        <label>paypal</label><br>
-        <input type="submit" value="confirm" name="confirm"><br>
+        <label style= "width: 100px">Username</label>
+        <input type="text" name="username"><br>
+        <label style="min-width:100px">age</label>
+        <input type="text" name="age"><br>
+        <label style="min-width:100px">email</label>
+        <input type="text" name="email"><br>
+        <input type="submit" value="submit" name="submit"><br>
         
     </form>
     
@@ -22,27 +22,11 @@
 </html>
 
 <?php
-   //string manipulation
-   $user = "Ramses";
-   $city = "Bad Honnef";
-
-   $username = strtolower($user);
-   $username = strtoupper($user);
-   $city = trim($city);
-   //this function completes the string till the number of specified characters with the given character
-   $username = str_pad($username,20,"-");
-   $username = str_replace("s","ss",$username);
-   $username = strrev($username);
-   //this function creates a permutation of the input string
-   $username = str_shuffle($username);
-   $equals = strcmp($username, "bro");
-   $count = strlen($username);
-   $positon = strpos($username, "a");
-   $positon = substr($username, 0, 5);
-   //creates array of different words
-   $city_array = explode(" ", $city);
-   //creates a word out of a phrase/array with specified delimiter
-   $city_word = implode("-",$city);
-
-
+    //filtering the input to prevent maliscious code from users
+    if (isset($_POST["submit"])){
+        $username = filter_input(INPUT_POST,"username",
+        FILTER_SANITIZE_SPECIAL_CHARS);
+        $age = filter_input(INPUT_POST,"age",FILTER_SANITIZE_NUMBER_INT);
+        $email = filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL);
+    }
 ?>
