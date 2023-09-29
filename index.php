@@ -16,12 +16,22 @@
 </html>
 
 <?php
-    $running = true;
-    $count = 0;
-    while($running){
-        if (isset($_POST["stop"])){
-            $running = false;
-        }
-        else echo "wait <br>";
-    }
+   $marks = array(10,20,30,11,14,15);
+   foreach($marks as $mark){
+    echo $mark . "<br>";
+   }
+   $marks[0] = 10.9;
+   foreach($marks as $mark){
+    echo $mark . "<br>";
+   }
+   array_push($marks, 50);
+   foreach($marks as $mark){
+    echo $mark . "<br>";
+   }
+   array_pop($marks);
+   foreach($marks as $mark){
+    echo $mark . "<br>";
+   }
+   $marks = array_reverse($marks);
+   echo count($marks);
 ?>
