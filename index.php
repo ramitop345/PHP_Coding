@@ -8,21 +8,33 @@
 </head>
 <body>
     <form action="index.php" method="post">
-       <label for="">quantity:</label><br>
-       <input type="text" name= "quantity">
-       <input type="submit" value="total">
+        <label for="">x:</label>
+        <input type="text" name= "x">
+        <label for="">y:</label>
+        <input type="text" name= "y">
+        <label for="">z:</label>
+        <input type="text" name= "z">
+        <input type="submit" value="total">
     </form>
     
 </body>
 </html>
 
 <?php
-   $item= "pizza";
-   $price = 5.99;
-   $quantity = $_POST["quantity"];
-   $total = null;
-   $total = $quantity*$price;
-
-   echo "You have ordered {$quantity}x{$item}/s <br>";
-   echo "Your total is: \${$total}";
+   $x = $_POST["x"];
+   $x = $_POST["y"];
+   $x = $_POST["z"];
+    $total = null;
+    //$total = abs($x);
+    //$total = round($x);
+    //$total = floor($x);
+    //$total = ceil($x);
+    //$total = sqrt($x);
+    //$total = pow($x,$y);
+    //$total = max($x,$y,$z);
+    //$total = min($x,$y,$z);
+    //$total = pi();
+    //random numbers
+    //$total = rand($x,$y);
+   echo $x;
 ?>
