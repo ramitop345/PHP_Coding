@@ -8,7 +8,7 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <label for="">radius:</label>
+        <input type="submit" value="stop" name="stop">
         
     </form>
     
@@ -16,34 +16,12 @@
 </html>
 
 <?php
-    //if else statements
-    $age = 18;
-    if ($age >= 15){
-        echo "you are old";
-    }
-    elseif ($age >=0) {
-        echo "your are young";
-    }
-    else echo "wrong value";
-
-    //switch statement
-    switch($age){
-        case 5:
-            break;
-        default:
-            echo "this is your age";
-            break;
-    }
-
-    //for loop
-    for ($i=0;$i<5;$i++){
-        echo "this is a for loop <br>";
-    }
-
-    
-    //while statement
-    while($age>1){
-        echo "age still positive <br>";
-        $age-=5;
+    $running = true;
+    $count = 0;
+    while($running){
+        if (isset($_POST["stop"])){
+            $running = false;
+        }
+        else echo "wait <br>";
     }
 ?>
