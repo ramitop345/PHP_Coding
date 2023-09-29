@@ -22,24 +22,27 @@
 </html>
 
 <?php
-    //creating functions
-    function func1(){
-        echo "this is a function <br>";
-    }
+   //string manipulation
+   $user = "Ramses";
+   $city = "Bad Honnef";
 
-    function func2($param){
-        echo "this is a function with parameter called: {$param} <br>";
-    }
+   $username = strtolower($user);
+   $username = strtoupper($user);
+   $city = trim($city);
+   //this function completes the string till the number of specified characters with the given character
+   $username = str_pad($username,20,"-");
+   $username = str_replace("s","ss",$username);
+   $username = strrev($username);
+   //this function creates a permutation of the input string
+   $username = str_shuffle($username);
+   $equals = strcmp($username, "bro");
+   $count = strlen($username);
+   $positon = strpos($username, "a");
+   $positon = substr($username, 0, 5);
+   //creates array of different words
+   $city_array = explode(" ", $city);
+   //creates a word out of a phrase/array with specified delimiter
+   $city_word = implode("-",$city);
 
-    function func3(){
-        echo "this is a function with a return value; <br>";
-        echo "the returned value is: ";
-        return "returned value";
-    }
 
-
-    func1();
-    func2("the parameter");
-    $value = func3();
-    echo $value;
 ?>
