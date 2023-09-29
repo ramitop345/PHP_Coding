@@ -23,10 +23,19 @@
 
 <?php
     //filtering the input to prevent maliscious code from users
-    if (isset($_POST["submit"])){
+    /*if (isset($_POST["submit"])){
         $username = filter_input(INPUT_POST,"username",
         FILTER_SANITIZE_SPECIAL_CHARS);
         $age = filter_input(INPUT_POST,"age",FILTER_SANITIZE_NUMBER_INT);
         $email = filter_input(INPUT_POST,"email",FILTER_SANITIZE_EMAIL);
+    }*/
+
+    // we now use the validate filter which sets the variable to zero when the filtering condition is not meet
+    // age and emails are set to 0 when the filtering condition is not met
+    if (isset($_POST["submit"])){
+        $username = filter_input(INPUT_POST,"username",
+        FILTER_SANITIZE_SPECIAL_CHARS);
+        $age = filter_input(INPUT_POST,"age",FILTER_VALIDATE_INT);
+        $email = filter_input(INPUT_POST,"email",FILTER_VALIDATE_EMAIL);
     }
 ?>
