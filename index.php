@@ -1,17 +1,17 @@
 <?php
-//variable declaration
-$name = "Bro";
-echo "Hello {$name}<br>";
-$email = "myemail@gmail.com";
-$price = 19.99;
-// when we echo boolean variables , 1 is displayed if true and nothing if false
-$online = true;
-$age = 18;
-//declare a variable without assigning a value
-$total  =null;
+//Arithmetic Operations
+$x = 10;
+$y = 10;
+$z = 10;
+echo $x++;
+echo $y%$z;
+echo $z--;
+$total = $x+$x-$y*$y/$z;
+echo "<br> {$total} <br>";
+//exponents
+echo $x**3
 
-echo "your email is {$email}<br>";
-echo "the price of the item is \${$price}<br>";
+
 
 ?>
 
