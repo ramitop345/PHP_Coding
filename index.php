@@ -8,7 +8,13 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <input type="submit" value="stop" name="stop">
+        <input type="radio" name="payment" value= "visa">
+        <label>visa</label><br>
+        <input type="radio" name="payment" value="master">
+        <label>master</label><br>
+        <input type="radio" name="payment" value= "paypal">
+        <label>paypal</label><br>
+        <input type="submit" value="confirm" name="confirm"><br>
         
     </form>
     
@@ -16,29 +22,26 @@
 </html>
 
 <?php
-//associative arrays = dictionaries = arrays made of key-values pairs
-
-    $capitals = array("USA"=>"Washington",
-                    "USE"=>"Washington",
-                    "USB"=>"Washington",
-                    "USC"=>"Washington",
-                    "USD"=>"Washington");
-
-    foreach($capitals as $key=>$value){
-        echo "{$key} = {$value} <br>";
+if(isset($_POST["confirm"])){
+    if(isset($_POST["payment"])){
+        switch($_POST["payment"]){
+            case "visa":
+                echo " you  selected visa payment method";
+                break;
+            case "master":
+                echo " you  selected master payment method";
+                break;
+            case "paypal":
+                echo " you  selected paypal payment method";
+                break;
+            default:
+            echo "";
+                break;
+        }
     }
-
-    $capitals["USA"] = "Douala";
-    $capitals["CAMEROUN"] = "Douala";
-    array_pop($capitals);
-
-    //retrieving alls keys from dictionary
-    $keys = array_keys($capitals);
-    $values = array_values($capitals);
-
-    foreach($capitals as $key=>$value){
-        echo "{$key} = {$value} <br>";
+    else{
+        echo "Please select a payement method";
     }
-
+}
 
 ?>
