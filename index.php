@@ -22,26 +22,24 @@
 </html>
 
 <?php
-if(isset($_POST["confirm"])){
-    if(isset($_POST["payment"])){
-        switch($_POST["payment"]){
-            case "visa":
-                echo " you  selected visa payment method";
-                break;
-            case "master":
-                echo " you  selected master payment method";
-                break;
-            case "paypal":
-                echo " you  selected paypal payment method";
-                break;
-            default:
-            echo "";
-                break;
-        }
+    //creating functions
+    function func1(){
+        echo "this is a function <br>";
     }
-    else{
-        echo "Please select a payement method";
-    }
-}
 
+    function func2($param){
+        echo "this is a function with parameter called: {$param} <br>";
+    }
+
+    function func3(){
+        echo "this is a function with a return value; <br>";
+        echo "the returned value is: ";
+        return "returned value";
+    }
+
+
+    func1();
+    func2("the parameter");
+    $value = func3();
+    echo $value;
 ?>
