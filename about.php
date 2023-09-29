@@ -1,6 +1,5 @@
-
 <?php
-    include("header.html")
+include("header.html");
 ?>
 
 <!DOCTYPE html>
@@ -11,10 +10,11 @@
     <title>Document</title>
 </head>
 <body>
-    This is the Home Page <br>
-    Enter all stuff about your home page here
+    This is the About Pagae <br>
+    Enter all stuff concerning About page here <br>
 </body>
 </html>
+
 <?php
-    include("footer.html")
+include("footer.html");
 ?>
