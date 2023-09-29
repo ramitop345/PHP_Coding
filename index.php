@@ -1,9 +1,18 @@
 <?php
-echo "I love Pizza";
-echo "it is really good";
-// this is a comment
-/*this is 
-a multiline comment */
+//variable declaration
+$name = "Bro";
+echo "Hello {$name}<br>";
+$email = "myemail@gmail.com";
+$price = 19.99;
+// when we echo boolean variables , 1 is displayed if true and nothing if false
+$online = true;
+$age = 18;
+//declare a variable without assigning a value
+$total  =null;
+
+echo "your email is {$email}<br>";
+echo "the price of the item is \${$price}<br>";
+
 ?>
 
 <!DOCTYPE html>
