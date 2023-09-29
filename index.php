@@ -16,22 +16,29 @@
 </html>
 
 <?php
-   $marks = array(10,20,30,11,14,15);
-   foreach($marks as $mark){
-    echo $mark . "<br>";
-   }
-   $marks[0] = 10.9;
-   foreach($marks as $mark){
-    echo $mark . "<br>";
-   }
-   array_push($marks, 50);
-   foreach($marks as $mark){
-    echo $mark . "<br>";
-   }
-   array_pop($marks);
-   foreach($marks as $mark){
-    echo $mark . "<br>";
-   }
-   $marks = array_reverse($marks);
-   echo count($marks);
+//associative arrays = dictionaries = arrays made of key-values pairs
+
+    $capitals = array("USA"=>"Washington",
+                    "USE"=>"Washington",
+                    "USB"=>"Washington",
+                    "USC"=>"Washington",
+                    "USD"=>"Washington");
+
+    foreach($capitals as $key=>$value){
+        echo "{$key} = {$value} <br>";
+    }
+
+    $capitals["USA"] = "Douala";
+    $capitals["CAMEROUN"] = "Douala";
+    array_pop($capitals);
+
+    //retrieving alls keys from dictionary
+    $keys = array_keys($capitals);
+    $values = array_values($capitals);
+
+    foreach($capitals as $key=>$value){
+        echo "{$key} = {$value} <br>";
+    }
+
+
 ?>
