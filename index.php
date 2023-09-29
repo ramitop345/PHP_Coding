@@ -8,33 +8,42 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <label for="">x:</label>
-        <input type="text" name= "x">
-        <label for="">y:</label>
-        <input type="text" name= "y">
-        <label for="">z:</label>
-        <input type="text" name= "z">
-        <input type="submit" value="total">
+        <label for="">radius:</label>
+        
     </form>
     
 </body>
 </html>
 
 <?php
-   $x = $_POST["x"];
-   $x = $_POST["y"];
-   $x = $_POST["z"];
-    $total = null;
-    //$total = abs($x);
-    //$total = round($x);
-    //$total = floor($x);
-    //$total = ceil($x);
-    //$total = sqrt($x);
-    //$total = pow($x,$y);
-    //$total = max($x,$y,$z);
-    //$total = min($x,$y,$z);
-    //$total = pi();
-    //random numbers
-    //$total = rand($x,$y);
-   echo $x;
+    //if else statements
+    $age = 18;
+    if ($age >= 15){
+        echo "you are old";
+    }
+    elseif ($age >=0) {
+        echo "your are young";
+    }
+    else echo "wrong value";
+
+    //switch statement
+    switch($age){
+        case 5:
+            break;
+        default:
+            echo "this is your age";
+            break;
+    }
+
+    //for loop
+    for ($i=0;$i<5;$i++){
+        echo "this is a for loop <br>";
+    }
+
+    
+    //while statement
+    while($age>1){
+        echo "age still positive <br>";
+        $age-=5;
+    }
 ?>
