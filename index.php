@@ -1,17 +1,15 @@
 <?php
 
-// The array contains all headers, paths and scripts in the current web_page. 
-//we can use it for example to access file name dynamically so that we can change 
-//the original name without needing to do that in the other files where the actual file is called 
-    //foreach($_SERVER as $key => $value){
-      //  echo "{$key} = {$value} <br>";
-    //}
+//hashing sensitive data to numbers, letters and symbols to hide or protect original input from third parties
+if(isset($_POST["login"])){
+    $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-    //checking post method status with §_SERVER
-    // old callling: if(isset($_POST["login]))
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        echo "Hello";
+    if(password_verify("password", $hash)){
+        echo "successfully logged in!";
+        echo $hash;
     }
+    else echo "Incorrect Password";
+}
 
 
 ?>
@@ -28,8 +26,10 @@
     <!-- The htmlspecialchars() helps encode special characters for html -->
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
     <label for="">username: </label> <br>
-    <input type="text" name="username">
-    <input type="submit" value= "login" name="login">
+    <input type="text" name="username"><br>
+    <label for="">password: </label> <br>
+    <input type="password" name="password"> <br>
+    <input type="submit" value= "login" name="login"><br>
 
     </form>
 </body>
